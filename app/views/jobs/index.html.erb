@@ -1,0 +1,38 @@
+<h2>Job Search</h2>
+
+<div id="filter">
+  <form>
+    <input type="text" placeholder="Location"/>
+    <input type="text" placeholder="Job Level"/>
+    <input type="text" placeholder="Category"/>
+    <input type="text" placeholder="Company"/>
+    <input type="submit" value="Apply Filters" class="btn btn-primary"/>
+  </form>
+</div>
+
+<div id="active-filters">
+</div>
+
+<div class="container">
+  <div class="row row-centered">
+    <% @response["results"].each do |job| %>
+      <%= link_to job["refs"]["landing_page"] do %>
+        <div class="col-xs-3 col-centered result">
+          <h5><%= job["company"]["name"].upcase %></h5>
+          <h3><%= job["name"].gsub(/\S+/, &:capitalize) %></h3>
+          <% job["locations"].each do |loc| %>
+            <%= loc["name"] %>
+          <% end %>
+          <br>
+          <% job["levels"].each do |level| %>
+            <%= level["name"] %>
+          <% end %>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+</div>
+
+<div class="pages">
+
+</div>
