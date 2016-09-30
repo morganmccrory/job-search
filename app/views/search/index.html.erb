@@ -1,21 +1,21 @@
 <h2>Job Search</h2>
 
-<div id="filter">
-  <form>
-    <input type="text" placeholder="Location"/>
-    <input type="text" placeholder="Job Level"/>
-    <input type="text" placeholder="Category"/>
-    <input type="text" placeholder="Company"/>
-    <input type="submit" value="Apply Filters" class="btn btn-primary"/>
-  </form>
-</div>
+<%= form_tag search_index_path, :method => 'get', :id => "filter" do %>
+  <p>
+    <%= text_field_tag :company, params[:company], placeholder: "Company" %>
+    <%= text_field_tag :location, params[:location], placeholder: "Location" %>
+    <%= text_field_tag :level, params[:level], placeholder: "Level" %>
+    <%= text_field_tag :category, params[:category], placeholder: "Category" %>
+    <%= submit_tag "Apply Filters", class: "btn btn-primary" %>
+  </p>
+<% end %>
 
 <div id="active-filters">
 </div>
 
 <div class="container">
   <div class="row row-centered">
-    <% @response["results"].each do |job| %>
+    <% @search.jobs["results"].each do |job| %>
       <%= link_to job["refs"]["landing_page"] do %>
         <div class="col-xs-3 col-centered result">
           <h5><%= job["company"]["name"].upcase %></h5>
