@@ -2,10 +2,10 @@
 
 <%= form_tag search_index_path, :method => 'get', :id => "filter" do %>
   <p>
-    <%= text_field_tag :company, params[:company], placeholder: "Company" %>
-    <%= text_field_tag :location, params[:location], placeholder: "Location" %>
-    <%= text_field_tag :level, params[:level], placeholder: "Level" %>
-    <%= text_field_tag :category, params[:category], placeholder: "Category" %>
+    <%= select_tag(:company, options_from_collection_for_select(@companies, "name", "name"), {multiple: true}) %>
+    <%= select_tag(:location, options_for_select(@locations), {multiple: true}) %>
+    <%= select_tag(:level, options_from_collection_for_select(@levels, "name", "name"), {multiple: true}) %>
+    <%= select_tag(:category, options_from_collection_for_select(@categories, "name", "name"), {multiple: true}) %>
     <%= submit_tag "Apply Filters", class: "btn btn-primary" %>
   </p>
 <% end %>

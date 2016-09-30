@@ -12775,3 +12775,742 @@ Migrating to CreateCompanies (20160921210317)
   [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
   [1m[35mSQL (0.4ms)[0m  INSERT INTO "levels" ("name") VALUES (?)  [["name", "Senior Level"]]
   [1m[36m (1.3ms)[0m  [1mcommit transaction[0m
+
+
+Started GET "/" for ::1 at 2016-09-30 00:45:15 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by SearchController#index as HTML
+  [1m[35mLocation Load (53.7ms)[0m  SELECT "locations".* FROM "locations"
+  Rendered search/index.html.erb within layouts/application (142.0ms)
+Completed 500 Internal Server Error in 411ms (ActiveRecord: 54.4ms)
+
+ActionView::Template::Error (undefined local variable or method `builder' for #<#<Class:0x007fd8e8eb4740>:0x007fd8e8ea5628>):
+    3: <%= form_tag search_index_path, :method => 'get', :id => "filter" do %>
+    4:   <p>
+    5:     <%= text_field_tag :company, params[:company], placeholder: "Company" %>
+    6:     <%= builder.select(:location, options_for_select(@locations), {}, {multiple: true, size: 10}) %>
+    7:     <%= text_field_tag :level, params[:level], placeholder: "Level" %>
+    8:     <%= text_field_tag :category, params[:category], placeholder: "Category" %>
+    9:     <%= submit_tag "Apply Filters", class: "btn btn-primary" %>
+  app/views/search/index.html.erb:6:in `block in _app_views_search_index_html_erb___2689779059918413426_70284803021360'
+  app/views/search/index.html.erb:3:in `_app_views_search_index_html_erb___2689779059918413426_70284803021360'
+
+
+  Rendered vendor/bundle/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (25.4ms)
+  Rendered vendor/bundle/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.6ms)
+  Rendered vendor/bundle/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered vendor/bundle/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (160.4ms)
+  Rendered vendor/bundle/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.7ms)
+  Rendered vendor/bundle/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered vendor/bundle/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered vendor/bundle/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
+  Rendered vendor/bundle/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (216.8ms)
+  Rendered vendor/bundle/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.6ms)
+  Rendered vendor/bundle/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.7ms)
+  Rendered vendor/bundle/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (383.5ms)
+
+
+Started GET "/" for ::1 at 2016-09-30 00:45:51 -0500
+Processing by SearchController#index as HTML
+  [1m[36mLocation Load (1.8ms)[0m  [1mSELECT "locations".* FROM "locations"[0m
+  Rendered search/index.html.erb within layouts/application (1812.0ms)
+Completed 200 OK in 3197ms (Views: 3194.7ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/assets/twitter-bootstrap-static/bootstrap.self-603f330c29af013305325569c8c75d03d688963abd8cde4fffec17b5ce417bfb.css?body=1" for ::1 at 2016-09-30 00:45:54 -0500
+
+
+Started GET "/assets/twitter-bootstrap-static/fontawesome.self-2fe4f8a61d73606fbcb036b41f380591906a4da65a9eb5ec0a210fe6980b2ca7.css?body=1" for ::1 at 2016-09-30 00:45:54 -0500
+
+
+Started GET "/assets/twitter/bootstrap/modal.self-72f95ffa1071297725a9ac91989693d56d1abf23f441a47455073b0da2857a5b.js?body=1" for ::1 at 2016-09-30 00:45:54 -0500
+
+
+Started GET "/assets/twitter/bootstrap/alert.self-a29e91e8cd3ddaba9bbc466901d53ec2127e9256b9b941905d525a3a716bd1a5.js?body=1" for ::1 at 2016-09-30 00:45:54 -0500
+
+
+Started GET "/assets/twitter/bootstrap/transition.self-09ff30b1e8a93d1f7728b9855f55d9c9d8d5734c8861e0d8139994e50944572a.js?body=1" for ::1 at 2016-09-30 00:45:54 -0500
+
+
+Started GET "/assets/twitter/bootstrap/dropdown.self-9314126777c6be5443e37ea7f7967d7914d72b3e60449ba50edc967446373059.js?body=1" for ::1 at 2016-09-30 00:45:54 -0500
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for ::1 at 2016-09-30 00:45:54 -0500
+
+
+Started GET "/assets/twitter/bootstrap/tooltip.self-11cf547be953f25f511cec668f6690473fd97b2f65502e4032f4030999a3f0c3.js?body=1" for ::1 at 2016-09-30 00:45:55 -0500
+
+
+Started GET "/assets/application.self-c2eae1db9c6049e6c0285a2dc69ad7a8efccb911876becde7ad7989ac8fa1275.css?body=1" for ::1 at 2016-09-30 00:45:55 -0500
+
+
+Started GET "/assets/bootstrap_and_overrides.self-2cb3834583dfbaf0a39c7139750bf963e05d79cbe811126997e013400be5d8dc.css?body=1" for ::1 at 2016-09-30 00:45:55 -0500
+
+
+Started GET "/assets/twitter/bootstrap/scrollspy.self-a155b9d4b2f978905f0326c0f6635e1134fe91c6bfbfcbad079fa24a9fef2b0e.js?body=1" for ::1 at 2016-09-30 00:45:55 -0500
+
+
+Started GET "/assets/twitter/bootstrap/collapse.self-7dc8bfbc2fbfabd2bad62c58ff8ffeaf8f20fb87c7ca6cd35f06d4dc19632587.js?body=1" for ::1 at 2016-09-30 00:45:55 -0500
+
+
+Started GET "/assets/twitter/bootstrap/carousel.self-57eb8422043cf0a85b7a9dc6843916eb0a3e35b419c7798a5eb254b918997631.js?body=1" for ::1 at 2016-09-30 00:45:55 -0500
+
+
+Started GET "/assets/twitter/bootstrap/affix.self-d2b642d8fbfc1d7041e2edefd66683ada567a980789dcd6f94fddda0b33408b5.js?body=1" for ::1 at 2016-09-30 00:45:55 -0500
+
+
+Started GET "/assets/turbolinks.self-c5acd7a204f5f25ce7a1d8a0e4d92e28d34c9e2df2c7371cd7af88e147e4ad82.js?body=1" for ::1 at 2016-09-30 00:45:55 -0500
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for ::1 at 2016-09-30 00:45:55 -0500
+
+
+Started GET "/assets/twitter/bootstrap.self-fbfa5ad7d9aa0afe439ec4ff3883acc4cb92b62cb67c40d674320c9aa1d4642d.js?body=1" for ::1 at 2016-09-30 00:45:55 -0500
+
+
+Started GET "/assets/twitter/bootstrap/popover.self-77d8e3a2499c1104ef146396a68b82469ee2bdb365199b874694698d10405e9a.js?body=1" for ::1 at 2016-09-30 00:45:55 -0500
+
+
+Started GET "/assets/twitter/bootstrap/tab.self-122235057fbd4c6c7da377d59dc58f47b44cb1088a2e38e6ee6ce9d8ac29a26a.js?body=1" for ::1 at 2016-09-30 00:45:55 -0500
+
+
+Started GET "/assets/twitter/bootstrap/button.self-a6cb16785434acb365ae426aef9f1fce05ed553cae7a965e4471c3da71509175.js?body=1" for ::1 at 2016-09-30 00:45:55 -0500
+
+
+Started GET "/assets/application.self-6b51f69af942ddec081df7352022cee53c93e0de16f22f051a57ec1ed93f97fe.js?body=1" for ::1 at 2016-09-30 00:45:55 -0500
+
+
+Started GET "/assets/bootstrap.self-fdc98dee79ee88255e10cac6caa91338165cb76cf0d263744d8d90011fc2ef8f.js?body=1" for ::1 at 2016-09-30 00:45:55 -0500
+
+
+Started GET "/" for ::1 at 2016-09-30 00:47:59 -0500
+Processing by SearchController#index as HTML
+  [1m[35mLocation Load (10.9ms)[0m  SELECT "locations".* FROM "locations"
+  Rendered search/index.html.erb within layouts/application (54.3ms)
+Completed 500 Internal Server Error in 66ms (ActiveRecord: 10.9ms)
+
+ActionView::Template::Error (wrong number of arguments (given 4, expected 1..3)):
+    3: <%= form_tag search_index_path, :method => 'get', :id => "filter" do %>
+    4:   <p>
+    5:     <%= text_field_tag :company, params[:company], placeholder: "Company" %>
+    6:     <%= select_tag(:location, options_for_select(@locations), {}, {multiple: true}) %>
+    7:     <%= text_field_tag :level, params[:level], placeholder: "Level" %>
+    8:     <%= text_field_tag :category, params[:category], placeholder: "Category" %>
+    9:     <%= submit_tag "Apply Filters", class: "btn btn-primary" %>
+  app/views/search/index.html.erb:6:in `block in _app_views_search_index_html_erb___2689779059918413426_70284841089060'
+  app/views/search/index.html.erb:3:in `_app_views_search_index_html_erb___2689779059918413426_70284841089060'
+
+
+  Rendered vendor/bundle/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (14.3ms)
+  Rendered vendor/bundle/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (7.7ms)
+  Rendered vendor/bundle/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.9ms)
+  Rendered vendor/bundle/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (136.2ms)
+  Rendered vendor/bundle/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.7ms)
+  Rendered vendor/bundle/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.6ms)
+  Rendered vendor/bundle/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.6ms)
+  Rendered vendor/bundle/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.6ms)
+  Rendered vendor/bundle/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (111.5ms)
+  Rendered vendor/bundle/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.5ms)
+  Rendered vendor/bundle/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (1.0ms)
+  Rendered vendor/bundle/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (248.0ms)
+
+
+Started GET "/" for ::1 at 2016-09-30 00:48:15 -0500
+Processing by SearchController#index as HTML
+  [1m[36mLocation Load (1.6ms)[0m  [1mSELECT "locations".* FROM "locations"[0m
+  Rendered search/index.html.erb within layouts/application (1597.6ms)
+Completed 200 OK in 1674ms (Views: 1670.9ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/assets/twitter-bootstrap-static/bootstrap.self-603f330c29af013305325569c8c75d03d688963abd8cde4fffec17b5ce417bfb.css?body=1" for ::1 at 2016-09-30 00:48:17 -0500
+
+
+Started GET "/assets/twitter-bootstrap-static/fontawesome.self-2fe4f8a61d73606fbcb036b41f380591906a4da65a9eb5ec0a210fe6980b2ca7.css?body=1" for ::1 at 2016-09-30 00:48:17 -0500
+
+
+Started GET "/assets/twitter/bootstrap/transition.self-09ff30b1e8a93d1f7728b9855f55d9c9d8d5734c8861e0d8139994e50944572a.js?body=1" for ::1 at 2016-09-30 00:48:17 -0500
+
+
+Started GET "/assets/bootstrap_and_overrides.self-2cb3834583dfbaf0a39c7139750bf963e05d79cbe811126997e013400be5d8dc.css?body=1" for ::1 at 2016-09-30 00:48:17 -0500
+
+
+Started GET "/assets/application.self-c2eae1db9c6049e6c0285a2dc69ad7a8efccb911876becde7ad7989ac8fa1275.css?body=1" for ::1 at 2016-09-30 00:48:17 -0500
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for ::1 at 2016-09-30 00:48:17 -0500
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for ::1 at 2016-09-30 00:48:17 -0500
+
+
+Started GET "/assets/twitter/bootstrap/alert.self-a29e91e8cd3ddaba9bbc466901d53ec2127e9256b9b941905d525a3a716bd1a5.js?body=1" for ::1 at 2016-09-30 00:48:17 -0500
+
+
+Started GET "/assets/twitter/bootstrap/modal.self-72f95ffa1071297725a9ac91989693d56d1abf23f441a47455073b0da2857a5b.js?body=1" for ::1 at 2016-09-30 00:48:17 -0500
+
+
+Started GET "/assets/twitter/bootstrap/tab.self-122235057fbd4c6c7da377d59dc58f47b44cb1088a2e38e6ee6ce9d8ac29a26a.js?body=1" for ::1 at 2016-09-30 00:48:17 -0500
+
+
+Started GET "/assets/twitter/bootstrap/dropdown.self-9314126777c6be5443e37ea7f7967d7914d72b3e60449ba50edc967446373059.js?body=1" for ::1 at 2016-09-30 00:48:17 -0500
+
+
+Started GET "/assets/twitter/bootstrap/tooltip.self-11cf547be953f25f511cec668f6690473fd97b2f65502e4032f4030999a3f0c3.js?body=1" for ::1 at 2016-09-30 00:48:17 -0500
+
+
+Started GET "/assets/twitter/bootstrap/scrollspy.self-a155b9d4b2f978905f0326c0f6635e1134fe91c6bfbfcbad079fa24a9fef2b0e.js?body=1" for ::1 at 2016-09-30 00:48:17 -0500
+
+
+Started GET "/assets/twitter/bootstrap/popover.self-77d8e3a2499c1104ef146396a68b82469ee2bdb365199b874694698d10405e9a.js?body=1" for ::1 at 2016-09-30 00:48:17 -0500
+
+
+Started GET "/assets/twitter/bootstrap/button.self-a6cb16785434acb365ae426aef9f1fce05ed553cae7a965e4471c3da71509175.js?body=1" for ::1 at 2016-09-30 00:48:17 -0500
+
+
+Started GET "/assets/twitter/bootstrap/carousel.self-57eb8422043cf0a85b7a9dc6843916eb0a3e35b419c7798a5eb254b918997631.js?body=1" for ::1 at 2016-09-30 00:48:17 -0500
+
+
+Started GET "/assets/twitter/bootstrap/collapse.self-7dc8bfbc2fbfabd2bad62c58ff8ffeaf8f20fb87c7ca6cd35f06d4dc19632587.js?body=1" for ::1 at 2016-09-30 00:48:17 -0500
+
+
+Started GET "/assets/twitter/bootstrap/affix.self-d2b642d8fbfc1d7041e2edefd66683ada567a980789dcd6f94fddda0b33408b5.js?body=1" for ::1 at 2016-09-30 00:48:17 -0500
+
+
+Started GET "/assets/twitter/bootstrap.self-fbfa5ad7d9aa0afe439ec4ff3883acc4cb92b62cb67c40d674320c9aa1d4642d.js?body=1" for ::1 at 2016-09-30 00:48:17 -0500
+
+
+Started GET "/assets/turbolinks.self-c5acd7a204f5f25ce7a1d8a0e4d92e28d34c9e2df2c7371cd7af88e147e4ad82.js?body=1" for ::1 at 2016-09-30 00:48:17 -0500
+
+
+Started GET "/assets/bootstrap.self-fdc98dee79ee88255e10cac6caa91338165cb76cf0d263744d8d90011fc2ef8f.js?body=1" for ::1 at 2016-09-30 00:48:17 -0500
+
+
+Started GET "/assets/application.self-6b51f69af942ddec081df7352022cee53c93e0de16f22f051a57ec1ed93f97fe.js?body=1" for ::1 at 2016-09-30 00:48:17 -0500
+
+
+Started GET "/" for ::1 at 2016-09-30 00:48:45 -0500
+Processing by SearchController#index as HTML
+  [1m[35mLocation Load (2.0ms)[0m  SELECT "locations".* FROM "locations"
+  Rendered search/index.html.erb within layouts/application (609.5ms)
+Completed 200 OK in 695ms (Views: 692.0ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/assets/twitter-bootstrap-static/bootstrap.self-603f330c29af013305325569c8c75d03d688963abd8cde4fffec17b5ce417bfb.css?body=1" for ::1 at 2016-09-30 00:48:45 -0500
+
+
+Started GET "/assets/bootstrap_and_overrides.self-2cb3834583dfbaf0a39c7139750bf963e05d79cbe811126997e013400be5d8dc.css?body=1" for ::1 at 2016-09-30 00:48:45 -0500
+
+
+Started GET "/assets/application.self-c2eae1db9c6049e6c0285a2dc69ad7a8efccb911876becde7ad7989ac8fa1275.css?body=1" for ::1 at 2016-09-30 00:48:45 -0500
+
+
+Started GET "/assets/twitter-bootstrap-static/fontawesome.self-2fe4f8a61d73606fbcb036b41f380591906a4da65a9eb5ec0a210fe6980b2ca7.css?body=1" for ::1 at 2016-09-30 00:48:46 -0500
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for ::1 at 2016-09-30 00:48:46 -0500
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for ::1 at 2016-09-30 00:48:46 -0500
+
+
+Started GET "/assets/twitter/bootstrap/transition.self-09ff30b1e8a93d1f7728b9855f55d9c9d8d5734c8861e0d8139994e50944572a.js?body=1" for ::1 at 2016-09-30 00:48:46 -0500
+
+
+Started GET "/assets/twitter/bootstrap/alert.self-a29e91e8cd3ddaba9bbc466901d53ec2127e9256b9b941905d525a3a716bd1a5.js?body=1" for ::1 at 2016-09-30 00:48:46 -0500
+
+
+Started GET "/assets/twitter/bootstrap/tooltip.self-11cf547be953f25f511cec668f6690473fd97b2f65502e4032f4030999a3f0c3.js?body=1" for ::1 at 2016-09-30 00:48:46 -0500
+
+
+Started GET "/assets/twitter/bootstrap/dropdown.self-9314126777c6be5443e37ea7f7967d7914d72b3e60449ba50edc967446373059.js?body=1" for ::1 at 2016-09-30 00:48:46 -0500
+
+
+Started GET "/assets/twitter/bootstrap/scrollspy.self-a155b9d4b2f978905f0326c0f6635e1134fe91c6bfbfcbad079fa24a9fef2b0e.js?body=1" for ::1 at 2016-09-30 00:48:46 -0500
+
+
+Started GET "/assets/twitter/bootstrap/tab.self-122235057fbd4c6c7da377d59dc58f47b44cb1088a2e38e6ee6ce9d8ac29a26a.js?body=1" for ::1 at 2016-09-30 00:48:46 -0500
+
+
+Started GET "/assets/twitter/bootstrap/modal.self-72f95ffa1071297725a9ac91989693d56d1abf23f441a47455073b0da2857a5b.js?body=1" for ::1 at 2016-09-30 00:48:46 -0500
+
+
+Started GET "/assets/twitter/bootstrap/popover.self-77d8e3a2499c1104ef146396a68b82469ee2bdb365199b874694698d10405e9a.js?body=1" for ::1 at 2016-09-30 00:48:46 -0500
+
+
+Started GET "/assets/twitter/bootstrap/button.self-a6cb16785434acb365ae426aef9f1fce05ed553cae7a965e4471c3da71509175.js?body=1" for ::1 at 2016-09-30 00:48:46 -0500
+
+
+Started GET "/assets/twitter/bootstrap/carousel.self-57eb8422043cf0a85b7a9dc6843916eb0a3e35b419c7798a5eb254b918997631.js?body=1" for ::1 at 2016-09-30 00:48:46 -0500
+
+
+Started GET "/assets/twitter/bootstrap/collapse.self-7dc8bfbc2fbfabd2bad62c58ff8ffeaf8f20fb87c7ca6cd35f06d4dc19632587.js?body=1" for ::1 at 2016-09-30 00:48:46 -0500
+
+
+Started GET "/assets/twitter/bootstrap.self-fbfa5ad7d9aa0afe439ec4ff3883acc4cb92b62cb67c40d674320c9aa1d4642d.js?body=1" for ::1 at 2016-09-30 00:48:46 -0500
+
+
+Started GET "/assets/twitter/bootstrap/affix.self-d2b642d8fbfc1d7041e2edefd66683ada567a980789dcd6f94fddda0b33408b5.js?body=1" for ::1 at 2016-09-30 00:48:46 -0500
+
+
+Started GET "/assets/bootstrap.self-fdc98dee79ee88255e10cac6caa91338165cb76cf0d263744d8d90011fc2ef8f.js?body=1" for ::1 at 2016-09-30 00:48:46 -0500
+
+
+Started GET "/assets/turbolinks.self-c5acd7a204f5f25ce7a1d8a0e4d92e28d34c9e2df2c7371cd7af88e147e4ad82.js?body=1" for ::1 at 2016-09-30 00:48:46 -0500
+
+
+Started GET "/assets/application.self-6b51f69af942ddec081df7352022cee53c93e0de16f22f051a57ec1ed93f97fe.js?body=1" for ::1 at 2016-09-30 00:48:46 -0500
+
+
+Started GET "/" for ::1 at 2016-09-30 00:49:34 -0500
+Processing by SearchController#index as HTML
+  [1m[36mLocation Load (14.1ms)[0m  [1mSELECT "locations".* FROM "locations"[0m
+Completed 500 Internal Server Error in 44ms (ActiveRecord: 14.6ms)
+
+NoMethodError (undefined method `name' for #<Location id: 1, city: "Accra", state: "Ghana">):
+  app/controllers/search_controller.rb:5:in `block in index'
+  app/controllers/search_controller.rb:4:in `index'
+
+
+  Rendered vendor/bundle/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (9.4ms)
+  Rendered vendor/bundle/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.9ms)
+  Rendered vendor/bundle/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered vendor/bundle/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (130.9ms)
+  Rendered vendor/bundle/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.6ms)
+  Rendered vendor/bundle/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.6ms)
+  Rendered vendor/bundle/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered vendor/bundle/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.6ms)
+  Rendered vendor/bundle/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (114.7ms)
+  Rendered vendor/bundle/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.5ms)
+  Rendered vendor/bundle/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.6ms)
+  Rendered vendor/bundle/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (248.1ms)
+
+
+Started GET "/" for ::1 at 2016-09-30 00:50:11 -0500
+Processing by SearchController#index as HTML
+  [1m[35mLocation Load (2.0ms)[0m  SELECT "locations".* FROM "locations"
+  Rendered search/index.html.erb within layouts/application (1987.1ms)
+Completed 200 OK in 2721ms (Views: 2673.6ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/assets/twitter-bootstrap-static/fontawesome.self-2fe4f8a61d73606fbcb036b41f380591906a4da65a9eb5ec0a210fe6980b2ca7.css?body=1" for ::1 at 2016-09-30 00:50:14 -0500
+
+
+Started GET "/assets/application.self-c2eae1db9c6049e6c0285a2dc69ad7a8efccb911876becde7ad7989ac8fa1275.css?body=1" for ::1 at 2016-09-30 00:50:14 -0500
+
+
+Started GET "/assets/bootstrap_and_overrides.self-2cb3834583dfbaf0a39c7139750bf963e05d79cbe811126997e013400be5d8dc.css?body=1" for ::1 at 2016-09-30 00:50:14 -0500
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for ::1 at 2016-09-30 00:50:14 -0500
+
+
+Started GET "/assets/twitter-bootstrap-static/bootstrap.self-603f330c29af013305325569c8c75d03d688963abd8cde4fffec17b5ce417bfb.css?body=1" for ::1 at 2016-09-30 00:50:14 -0500
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for ::1 at 2016-09-30 00:50:14 -0500
+
+
+Started GET "/assets/twitter/bootstrap/dropdown.self-9314126777c6be5443e37ea7f7967d7914d72b3e60449ba50edc967446373059.js?body=1" for ::1 at 2016-09-30 00:50:14 -0500
+
+
+Started GET "/assets/twitter/bootstrap/tab.self-122235057fbd4c6c7da377d59dc58f47b44cb1088a2e38e6ee6ce9d8ac29a26a.js?body=1" for ::1 at 2016-09-30 00:50:14 -0500
+
+
+Started GET "/assets/twitter/bootstrap/scrollspy.self-a155b9d4b2f978905f0326c0f6635e1134fe91c6bfbfcbad079fa24a9fef2b0e.js?body=1" for ::1 at 2016-09-30 00:50:14 -0500
+
+
+Started GET "/assets/twitter/bootstrap/tooltip.self-11cf547be953f25f511cec668f6690473fd97b2f65502e4032f4030999a3f0c3.js?body=1" for ::1 at 2016-09-30 00:50:14 -0500
+
+
+Started GET "/assets/twitter/bootstrap/button.self-a6cb16785434acb365ae426aef9f1fce05ed553cae7a965e4471c3da71509175.js?body=1" for ::1 at 2016-09-30 00:50:14 -0500
+
+
+Started GET "/assets/twitter/bootstrap/modal.self-72f95ffa1071297725a9ac91989693d56d1abf23f441a47455073b0da2857a5b.js?body=1" for ::1 at 2016-09-30 00:50:14 -0500
+
+
+Started GET "/assets/twitter/bootstrap/transition.self-09ff30b1e8a93d1f7728b9855f55d9c9d8d5734c8861e0d8139994e50944572a.js?body=1" for ::1 at 2016-09-30 00:50:14 -0500
+
+
+Started GET "/assets/twitter/bootstrap/alert.self-a29e91e8cd3ddaba9bbc466901d53ec2127e9256b9b941905d525a3a716bd1a5.js?body=1" for ::1 at 2016-09-30 00:50:14 -0500
+
+
+Started GET "/assets/twitter/bootstrap/popover.self-77d8e3a2499c1104ef146396a68b82469ee2bdb365199b874694698d10405e9a.js?body=1" for ::1 at 2016-09-30 00:50:14 -0500
+
+
+Started GET "/assets/twitter/bootstrap/collapse.self-7dc8bfbc2fbfabd2bad62c58ff8ffeaf8f20fb87c7ca6cd35f06d4dc19632587.js?body=1" for ::1 at 2016-09-30 00:50:14 -0500
+
+
+Started GET "/assets/twitter/bootstrap.self-fbfa5ad7d9aa0afe439ec4ff3883acc4cb92b62cb67c40d674320c9aa1d4642d.js?body=1" for ::1 at 2016-09-30 00:50:14 -0500
+
+
+Started GET "/assets/turbolinks.self-c5acd7a204f5f25ce7a1d8a0e4d92e28d34c9e2df2c7371cd7af88e147e4ad82.js?body=1" for ::1 at 2016-09-30 00:50:14 -0500
+
+
+Started GET "/assets/bootstrap.self-fdc98dee79ee88255e10cac6caa91338165cb76cf0d263744d8d90011fc2ef8f.js?body=1" for ::1 at 2016-09-30 00:50:14 -0500
+
+
+Started GET "/assets/application.self-6b51f69af942ddec081df7352022cee53c93e0de16f22f051a57ec1ed93f97fe.js?body=1" for ::1 at 2016-09-30 00:50:14 -0500
+
+
+Started GET "/assets/twitter/bootstrap/affix.self-d2b642d8fbfc1d7041e2edefd66683ada567a980789dcd6f94fddda0b33408b5.js?body=1" for ::1 at 2016-09-30 00:50:14 -0500
+
+
+Started GET "/assets/twitter/bootstrap/carousel.self-57eb8422043cf0a85b7a9dc6843916eb0a3e35b419c7798a5eb254b918997631.js?body=1" for ::1 at 2016-09-30 00:50:14 -0500
+
+
+Started GET "/search?utf8=%E2%9C%93&company=&location%5B%5D=Cape+Town%2C+South+Africa&level=&category=&commit=Apply+Filters" for ::1 at 2016-09-30 00:50:20 -0500
+Processing by SearchController#index as HTML
+  Parameters: {"utf8"=>"✓", "company"=>"", "location"=>["Cape Town, South Africa"], "level"=>"", "category"=>"", "commit"=>"Apply Filters"}
+  [1m[36mLocation Load (1.8ms)[0m  [1mSELECT "locations".* FROM "locations"[0m
+  Rendered search/index.html.erb within layouts/application (414.0ms)
+Completed 200 OK in 504ms (Views: 483.6ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/search?utf8=%E2%9C%93&company=&location%5B%5D=Albany%2C+NY&level=&category=&commit=Apply+Filters" for ::1 at 2016-09-30 00:50:32 -0500
+Processing by SearchController#index as HTML
+  Parameters: {"utf8"=>"✓", "company"=>"", "location"=>["Albany, NY"], "level"=>"", "category"=>"", "commit"=>"Apply Filters"}
+  [1m[35mLocation Load (1.2ms)[0m  SELECT "locations".* FROM "locations"
+  Rendered search/index.html.erb within layouts/application (471.2ms)
+Completed 200 OK in 1189ms (Views: 1171.8ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/search?utf8=%E2%9C%93&company=&location%5B%5D=Albany%2C+NY&level=&category=&commit=Apply+Filters" for ::1 at 2016-09-30 00:51:48 -0500
+Processing by SearchController#index as HTML
+  Parameters: {"utf8"=>"✓", "company"=>"", "location"=>["Albany, NY"], "level"=>"", "category"=>"", "commit"=>"Apply Filters"}
+  [1m[36mLocation Load (1.5ms)[0m  [1mSELECT "locations".* FROM "locations"[0m
+  Rendered search/index.html.erb within layouts/application (5.6ms)
+Completed 500 Internal Server Error in 62ms (ActiveRecord: 1.5ms)
+
+ActionView::Template::Error (wrong number of arguments (given 1, expected 3..4)):
+    3: <%= form_tag search_index_path, :method => 'get', :id => "filter" do %>
+    4:   <p>
+    5:     <%= text_field_tag :company, params[:company], placeholder: "Company" %>
+    6:     <%= select_tag(:location, options_from_collection_for_select(@locations), {multiple: true}) %>
+    7:     <%= text_field_tag :level, params[:level], placeholder: "Level" %>
+    8:     <%= text_field_tag :category, params[:category], placeholder: "Category" %>
+    9:     <%= submit_tag "Apply Filters", class: "btn btn-primary" %>
+  app/views/search/index.html.erb:6:in `block in _app_views_search_index_html_erb___2689779059918413426_70284862244180'
+  app/views/search/index.html.erb:3:in `_app_views_search_index_html_erb___2689779059918413426_70284862244180'
+
+
+  Rendered vendor/bundle/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (17.6ms)
+  Rendered vendor/bundle/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (6.8ms)
+  Rendered vendor/bundle/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.8ms)
+  Rendered vendor/bundle/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (150.5ms)
+  Rendered vendor/bundle/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.8ms)
+  Rendered vendor/bundle/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.9ms)
+  Rendered vendor/bundle/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered vendor/bundle/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (1.1ms)
+  Rendered vendor/bundle/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (110.1ms)
+  Rendered vendor/bundle/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.7ms)
+  Rendered vendor/bundle/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.7ms)
+  Rendered vendor/bundle/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (254.6ms)
+
+
+Started GET "/search?utf8=%E2%9C%93&company=&location%5B%5D=Albany%2C+NY&level=&category=&commit=Apply+Filters" for ::1 at 2016-09-30 00:54:27 -0500
+Processing by SearchController#index as HTML
+  Parameters: {"utf8"=>"✓", "company"=>"", "location"=>["Albany, NY"], "level"=>"", "category"=>"", "commit"=>"Apply Filters"}
+  [1m[35mLocation Load (3.1ms)[0m  SELECT "locations".* FROM "locations"
+  Rendered search/index.html.erb within layouts/application (2140.0ms)
+Completed 200 OK in 2789ms (Views: 2760.7ms | ActiveRecord: 3.1ms)
+
+
+Started GET "/assets/twitter-bootstrap-static/bootstrap.self-603f330c29af013305325569c8c75d03d688963abd8cde4fffec17b5ce417bfb.css?body=1" for ::1 at 2016-09-30 00:54:29 -0500
+
+
+Started GET "/assets/twitter-bootstrap-static/fontawesome.self-2fe4f8a61d73606fbcb036b41f380591906a4da65a9eb5ec0a210fe6980b2ca7.css?body=1" for ::1 at 2016-09-30 00:54:29 -0500
+
+
+Started GET "/assets/bootstrap_and_overrides.self-2cb3834583dfbaf0a39c7139750bf963e05d79cbe811126997e013400be5d8dc.css?body=1" for ::1 at 2016-09-30 00:54:29 -0500
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for ::1 at 2016-09-30 00:54:30 -0500
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for ::1 at 2016-09-30 00:54:30 -0500
+
+
+Started GET "/assets/twitter/bootstrap/modal.self-72f95ffa1071297725a9ac91989693d56d1abf23f441a47455073b0da2857a5b.js?body=1" for ::1 at 2016-09-30 00:54:30 -0500
+
+
+Started GET "/assets/application.self-c2eae1db9c6049e6c0285a2dc69ad7a8efccb911876becde7ad7989ac8fa1275.css?body=1" for ::1 at 2016-09-30 00:54:30 -0500
+
+
+Started GET "/assets/twitter/bootstrap/alert.self-a29e91e8cd3ddaba9bbc466901d53ec2127e9256b9b941905d525a3a716bd1a5.js?body=1" for ::1 at 2016-09-30 00:54:30 -0500
+
+
+Started GET "/assets/twitter/bootstrap/tab.self-122235057fbd4c6c7da377d59dc58f47b44cb1088a2e38e6ee6ce9d8ac29a26a.js?body=1" for ::1 at 2016-09-30 00:54:30 -0500
+
+
+Started GET "/assets/twitter/bootstrap/dropdown.self-9314126777c6be5443e37ea7f7967d7914d72b3e60449ba50edc967446373059.js?body=1" for ::1 at 2016-09-30 00:54:30 -0500
+
+
+Started GET "/assets/twitter/bootstrap/scrollspy.self-a155b9d4b2f978905f0326c0f6635e1134fe91c6bfbfcbad079fa24a9fef2b0e.js?body=1" for ::1 at 2016-09-30 00:54:30 -0500
+
+
+Started GET "/assets/twitter/bootstrap/transition.self-09ff30b1e8a93d1f7728b9855f55d9c9d8d5734c8861e0d8139994e50944572a.js?body=1" for ::1 at 2016-09-30 00:54:30 -0500
+
+
+Started GET "/assets/twitter/bootstrap/tooltip.self-11cf547be953f25f511cec668f6690473fd97b2f65502e4032f4030999a3f0c3.js?body=1" for ::1 at 2016-09-30 00:54:30 -0500
+
+
+Started GET "/assets/twitter/bootstrap/popover.self-77d8e3a2499c1104ef146396a68b82469ee2bdb365199b874694698d10405e9a.js?body=1" for ::1 at 2016-09-30 00:54:30 -0500
+
+
+Started GET "/assets/twitter/bootstrap/button.self-a6cb16785434acb365ae426aef9f1fce05ed553cae7a965e4471c3da71509175.js?body=1" for ::1 at 2016-09-30 00:54:30 -0500
+
+
+Started GET "/assets/twitter/bootstrap/collapse.self-7dc8bfbc2fbfabd2bad62c58ff8ffeaf8f20fb87c7ca6cd35f06d4dc19632587.js?body=1" for ::1 at 2016-09-30 00:54:30 -0500
+
+
+Started GET "/assets/twitter/bootstrap/carousel.self-57eb8422043cf0a85b7a9dc6843916eb0a3e35b419c7798a5eb254b918997631.js?body=1" for ::1 at 2016-09-30 00:54:30 -0500
+
+
+Started GET "/assets/twitter/bootstrap/affix.self-d2b642d8fbfc1d7041e2edefd66683ada567a980789dcd6f94fddda0b33408b5.js?body=1" for ::1 at 2016-09-30 00:54:30 -0500
+
+
+Started GET "/assets/twitter/bootstrap.self-fbfa5ad7d9aa0afe439ec4ff3883acc4cb92b62cb67c40d674320c9aa1d4642d.js?body=1" for ::1 at 2016-09-30 00:54:30 -0500
+
+
+Started GET "/assets/turbolinks.self-c5acd7a204f5f25ce7a1d8a0e4d92e28d34c9e2df2c7371cd7af88e147e4ad82.js?body=1" for ::1 at 2016-09-30 00:54:30 -0500
+
+
+Started GET "/assets/bootstrap.self-fdc98dee79ee88255e10cac6caa91338165cb76cf0d263744d8d90011fc2ef8f.js?body=1" for ::1 at 2016-09-30 00:54:30 -0500
+
+
+Started GET "/assets/application.self-6b51f69af942ddec081df7352022cee53c93e0de16f22f051a57ec1ed93f97fe.js?body=1" for ::1 at 2016-09-30 00:54:30 -0500
+
+
+Started GET "/search?utf8=%E2%9C%93&company=&location%5B%5D=Accra%2C+Ghana&location%5B%5D=A+Coruna%2C+Spain&location%5B%5D=Albany%2C+NY&level=&category=&commit=Apply+Filters" for ::1 at 2016-09-30 00:54:47 -0500
+Processing by SearchController#index as HTML
+  Parameters: {"utf8"=>"✓", "company"=>"", "location"=>["Accra, Ghana", "A Coruna, Spain", "Albany, NY"], "level"=>"", "category"=>"", "commit"=>"Apply Filters"}
+  [1m[36mLocation Load (1.7ms)[0m  [1mSELECT "locations".* FROM "locations"[0m
+  Rendered search/index.html.erb within layouts/application (471.2ms)
+Completed 200 OK in 586ms (Views: 566.7ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/search?utf8=%E2%9C%93&company=&location%5B%5D=Accra%2C+Ghana&location%5B%5D=A+Coruna%2C+Spain&location%5B%5D=Albany%2C+NY&level=&category=&commit=Apply+Filters" for ::1 at 2016-09-30 00:56:19 -0500
+Processing by SearchController#index as HTML
+  Parameters: {"utf8"=>"✓", "company"=>"", "location"=>["Accra, Ghana", "A Coruna, Spain", "Albany, NY"], "level"=>"", "category"=>"", "commit"=>"Apply Filters"}
+  [1m[35mLocation Load (2.0ms)[0m  SELECT "locations".* FROM "locations"
+  [1m[36mLevel Load (10.7ms)[0m  [1mSELECT "levels".* FROM "levels"[0m
+  Rendered search/index.html.erb within layouts/application (1561.1ms)
+Completed 200 OK in 2207ms (Views: 2086.2ms | ActiveRecord: 13.5ms)
+
+
+Started GET "/assets/twitter-bootstrap-static/bootstrap.self-603f330c29af013305325569c8c75d03d688963abd8cde4fffec17b5ce417bfb.css?body=1" for ::1 at 2016-09-30 00:56:21 -0500
+
+
+Started GET "/assets/twitter-bootstrap-static/fontawesome.self-2fe4f8a61d73606fbcb036b41f380591906a4da65a9eb5ec0a210fe6980b2ca7.css?body=1" for ::1 at 2016-09-30 00:56:21 -0500
+
+
+Started GET "/assets/bootstrap_and_overrides.self-2cb3834583dfbaf0a39c7139750bf963e05d79cbe811126997e013400be5d8dc.css?body=1" for ::1 at 2016-09-30 00:56:21 -0500
+
+
+Started GET "/assets/application.self-c2eae1db9c6049e6c0285a2dc69ad7a8efccb911876becde7ad7989ac8fa1275.css?body=1" for ::1 at 2016-09-30 00:56:21 -0500
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for ::1 at 2016-09-30 00:56:21 -0500
+
+
+Started GET "/assets/twitter/bootstrap/transition.self-09ff30b1e8a93d1f7728b9855f55d9c9d8d5734c8861e0d8139994e50944572a.js?body=1" for ::1 at 2016-09-30 00:56:21 -0500
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for ::1 at 2016-09-30 00:56:21 -0500
+
+
+Started GET "/assets/twitter/bootstrap/alert.self-a29e91e8cd3ddaba9bbc466901d53ec2127e9256b9b941905d525a3a716bd1a5.js?body=1" for ::1 at 2016-09-30 00:56:21 -0500
+
+
+Started GET "/assets/twitter/bootstrap/modal.self-72f95ffa1071297725a9ac91989693d56d1abf23f441a47455073b0da2857a5b.js?body=1" for ::1 at 2016-09-30 00:56:21 -0500
+
+
+Started GET "/assets/twitter/bootstrap/dropdown.self-9314126777c6be5443e37ea7f7967d7914d72b3e60449ba50edc967446373059.js?body=1" for ::1 at 2016-09-30 00:56:21 -0500
+
+
+Started GET "/assets/twitter/bootstrap/scrollspy.self-a155b9d4b2f978905f0326c0f6635e1134fe91c6bfbfcbad079fa24a9fef2b0e.js?body=1" for ::1 at 2016-09-30 00:56:21 -0500
+
+
+Started GET "/assets/twitter/bootstrap/button.self-a6cb16785434acb365ae426aef9f1fce05ed553cae7a965e4471c3da71509175.js?body=1" for ::1 at 2016-09-30 00:56:21 -0500
+
+
+Started GET "/assets/twitter/bootstrap/tooltip.self-11cf547be953f25f511cec668f6690473fd97b2f65502e4032f4030999a3f0c3.js?body=1" for ::1 at 2016-09-30 00:56:21 -0500
+
+
+Started GET "/assets/twitter/bootstrap/popover.self-77d8e3a2499c1104ef146396a68b82469ee2bdb365199b874694698d10405e9a.js?body=1" for ::1 at 2016-09-30 00:56:21 -0500
+
+
+Started GET "/assets/twitter/bootstrap/collapse.self-7dc8bfbc2fbfabd2bad62c58ff8ffeaf8f20fb87c7ca6cd35f06d4dc19632587.js?body=1" for ::1 at 2016-09-30 00:56:21 -0500
+
+
+Started GET "/assets/twitter/bootstrap/tab.self-122235057fbd4c6c7da377d59dc58f47b44cb1088a2e38e6ee6ce9d8ac29a26a.js?body=1" for ::1 at 2016-09-30 00:56:21 -0500
+
+
+Started GET "/assets/twitter/bootstrap/carousel.self-57eb8422043cf0a85b7a9dc6843916eb0a3e35b419c7798a5eb254b918997631.js?body=1" for ::1 at 2016-09-30 00:56:21 -0500
+
+
+Started GET "/assets/twitter/bootstrap/affix.self-d2b642d8fbfc1d7041e2edefd66683ada567a980789dcd6f94fddda0b33408b5.js?body=1" for ::1 at 2016-09-30 00:56:21 -0500
+
+
+Started GET "/assets/twitter/bootstrap.self-fbfa5ad7d9aa0afe439ec4ff3883acc4cb92b62cb67c40d674320c9aa1d4642d.js?body=1" for ::1 at 2016-09-30 00:56:21 -0500
+
+
+Started GET "/assets/turbolinks.self-c5acd7a204f5f25ce7a1d8a0e4d92e28d34c9e2df2c7371cd7af88e147e4ad82.js?body=1" for ::1 at 2016-09-30 00:56:21 -0500
+
+
+Started GET "/assets/bootstrap.self-fdc98dee79ee88255e10cac6caa91338165cb76cf0d263744d8d90011fc2ef8f.js?body=1" for ::1 at 2016-09-30 00:56:21 -0500
+
+
+Started GET "/assets/application.self-6b51f69af942ddec081df7352022cee53c93e0de16f22f051a57ec1ed93f97fe.js?body=1" for ::1 at 2016-09-30 00:56:22 -0500
+
+
+Started GET "/search?utf8=%E2%9C%93&company=&level%5B%5D=Entry+Level&category=&commit=Apply+Filters" for ::1 at 2016-09-30 00:56:25 -0500
+Processing by SearchController#index as HTML
+  Parameters: {"utf8"=>"✓", "company"=>"", "level"=>["Entry Level"], "category"=>"", "commit"=>"Apply Filters"}
+  [1m[35mLocation Load (1.3ms)[0m  SELECT "locations".* FROM "locations"
+  [1m[36mLevel Load (0.4ms)[0m  [1mSELECT "levels".* FROM "levels"[0m
+  Rendered search/index.html.erb within layouts/application (425.3ms)
+Completed 200 OK in 520ms (Views: 502.1ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/search?utf8=%E2%9C%93&company=&level%5B%5D=Entry+Level&category=&commit=Apply+Filters" for ::1 at 2016-09-30 00:57:11 -0500
+Processing by SearchController#index as HTML
+  Parameters: {"utf8"=>"✓", "company"=>"", "level"=>["Entry Level"], "category"=>"", "commit"=>"Apply Filters"}
+  [1m[35mLocation Load (1.7ms)[0m  SELECT "locations".* FROM "locations"
+  [1m[36mCompany Load (28.3ms)[0m  [1mSELECT "companies".* FROM "companies"[0m
+  [1m[35mLevel Load (0.3ms)[0m  SELECT "levels".* FROM "levels"
+  [1m[36mCategory Load (0.5ms)[0m  [1mSELECT "categories".* FROM "categories"[0m
+  Rendered search/index.html.erb within layouts/application (504.7ms)
+Completed 200 OK in 594ms (Views: 545.4ms | ActiveRecord: 31.5ms)
+
+
+Started GET "/assets/twitter-bootstrap-static/fontawesome.self-2fe4f8a61d73606fbcb036b41f380591906a4da65a9eb5ec0a210fe6980b2ca7.css?body=1" for ::1 at 2016-09-30 00:57:11 -0500
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for ::1 at 2016-09-30 00:57:11 -0500
+
+
+Started GET "/assets/application.self-c2eae1db9c6049e6c0285a2dc69ad7a8efccb911876becde7ad7989ac8fa1275.css?body=1" for ::1 at 2016-09-30 00:57:11 -0500
+
+
+Started GET "/assets/bootstrap_and_overrides.self-2cb3834583dfbaf0a39c7139750bf963e05d79cbe811126997e013400be5d8dc.css?body=1" for ::1 at 2016-09-30 00:57:11 -0500
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for ::1 at 2016-09-30 00:57:11 -0500
+
+
+Started GET "/assets/twitter/bootstrap/transition.self-09ff30b1e8a93d1f7728b9855f55d9c9d8d5734c8861e0d8139994e50944572a.js?body=1" for ::1 at 2016-09-30 00:57:11 -0500
+
+
+Started GET "/assets/twitter-bootstrap-static/bootstrap.self-603f330c29af013305325569c8c75d03d688963abd8cde4fffec17b5ce417bfb.css?body=1" for ::1 at 2016-09-30 00:57:11 -0500
+
+
+Started GET "/assets/twitter/bootstrap/modal.self-72f95ffa1071297725a9ac91989693d56d1abf23f441a47455073b0da2857a5b.js?body=1" for ::1 at 2016-09-30 00:57:11 -0500
+
+
+Started GET "/assets/twitter/bootstrap/dropdown.self-9314126777c6be5443e37ea7f7967d7914d72b3e60449ba50edc967446373059.js?body=1" for ::1 at 2016-09-30 00:57:11 -0500
+
+
+Started GET "/assets/twitter/bootstrap/alert.self-a29e91e8cd3ddaba9bbc466901d53ec2127e9256b9b941905d525a3a716bd1a5.js?body=1" for ::1 at 2016-09-30 00:57:11 -0500
+
+
+Started GET "/assets/twitter/bootstrap/scrollspy.self-a155b9d4b2f978905f0326c0f6635e1134fe91c6bfbfcbad079fa24a9fef2b0e.js?body=1" for ::1 at 2016-09-30 00:57:11 -0500
+
+
+Started GET "/assets/twitter/bootstrap/tab.self-122235057fbd4c6c7da377d59dc58f47b44cb1088a2e38e6ee6ce9d8ac29a26a.js?body=1" for ::1 at 2016-09-30 00:57:11 -0500
+
+
+Started GET "/assets/twitter/bootstrap/popover.self-77d8e3a2499c1104ef146396a68b82469ee2bdb365199b874694698d10405e9a.js?body=1" for ::1 at 2016-09-30 00:57:11 -0500
+
+
+Started GET "/assets/twitter/bootstrap/button.self-a6cb16785434acb365ae426aef9f1fce05ed553cae7a965e4471c3da71509175.js?body=1" for ::1 at 2016-09-30 00:57:12 -0500
+
+
+Started GET "/assets/twitter/bootstrap/carousel.self-57eb8422043cf0a85b7a9dc6843916eb0a3e35b419c7798a5eb254b918997631.js?body=1" for ::1 at 2016-09-30 00:57:12 -0500
+
+
+Started GET "/assets/twitter/bootstrap/collapse.self-7dc8bfbc2fbfabd2bad62c58ff8ffeaf8f20fb87c7ca6cd35f06d4dc19632587.js?body=1" for ::1 at 2016-09-30 00:57:12 -0500
+
+
+Started GET "/assets/twitter/bootstrap/tooltip.self-11cf547be953f25f511cec668f6690473fd97b2f65502e4032f4030999a3f0c3.js?body=1" for ::1 at 2016-09-30 00:57:12 -0500
+
+
+Started GET "/assets/twitter/bootstrap/affix.self-d2b642d8fbfc1d7041e2edefd66683ada567a980789dcd6f94fddda0b33408b5.js?body=1" for ::1 at 2016-09-30 00:57:12 -0500
+
+
+Started GET "/assets/twitter/bootstrap.self-fbfa5ad7d9aa0afe439ec4ff3883acc4cb92b62cb67c40d674320c9aa1d4642d.js?body=1" for ::1 at 2016-09-30 00:57:12 -0500
+
+
+Started GET "/assets/bootstrap.self-fdc98dee79ee88255e10cac6caa91338165cb76cf0d263744d8d90011fc2ef8f.js?body=1" for ::1 at 2016-09-30 00:57:12 -0500
+
+
+Started GET "/assets/turbolinks.self-c5acd7a204f5f25ce7a1d8a0e4d92e28d34c9e2df2c7371cd7af88e147e4ad82.js?body=1" for ::1 at 2016-09-30 00:57:12 -0500
+
+
+Started GET "/assets/application.self-6b51f69af942ddec081df7352022cee53c93e0de16f22f051a57ec1ed93f97fe.js?body=1" for ::1 at 2016-09-30 00:57:12 -0500
+
+
+Started GET "/search?utf8=%E2%9C%93&company%5B%5D=HealthcareSource&commit=Apply+Filters" for ::1 at 2016-09-30 00:57:18 -0500
+Processing by SearchController#index as HTML
+  Parameters: {"utf8"=>"✓", "company"=>["HealthcareSource"], "commit"=>"Apply Filters"}
+  [1m[35mLocation Load (1.9ms)[0m  SELECT "locations".* FROM "locations"
+  [1m[36mCompany Load (1.7ms)[0m  [1mSELECT "companies".* FROM "companies"[0m
+  [1m[35mLevel Load (0.3ms)[0m  SELECT "levels".* FROM "levels"
+  [1m[36mCategory Load (0.3ms)[0m  [1mSELECT "categories".* FROM "categories"[0m
+  Rendered search/index.html.erb within layouts/application (660.0ms)
+Completed 200 OK in 758ms (Views: 736.0ms | ActiveRecord: 4.1ms)
+
+
+Started GET "/search?utf8=%E2%9C%93&category%5B%5D=Business+%26+Strategy&commit=Apply+Filters" for ::1 at 2016-09-30 00:57:30 -0500
+Processing by SearchController#index as HTML
+  Parameters: {"utf8"=>"✓", "category"=>["Business & Strategy"], "commit"=>"Apply Filters"}
+  [1m[35mLocation Load (2.0ms)[0m  SELECT "locations".* FROM "locations"
+  [1m[36mCompany Load (1.8ms)[0m  [1mSELECT "companies".* FROM "companies"[0m
+  [1m[35mLevel Load (0.2ms)[0m  SELECT "levels".* FROM "levels"
+  [1m[36mCategory Load (0.2ms)[0m  [1mSELECT "categories".* FROM "categories"[0m
+  Rendered search/index.html.erb within layouts/application (1565.3ms)
+Completed 200 OK in 1658ms (Views: 1634.8ms | ActiveRecord: 4.2ms)
+
+
+Started GET "/search?utf8=%E2%9C%93&company%5B%5D=Symphony&location%5B%5D=Albany%2C+NY&level%5B%5D=Entry+Level&category%5B%5D=Business+%26+Strategy&commit=Apply+Filters" for ::1 at 2016-09-30 00:57:35 -0500
+Processing by SearchController#index as HTML
+  Parameters: {"utf8"=>"✓", "company"=>["Symphony"], "location"=>["Albany, NY"], "level"=>["Entry Level"], "category"=>["Business & Strategy"], "commit"=>"Apply Filters"}
+  [1m[35mLocation Load (1.2ms)[0m  SELECT "locations".* FROM "locations"
+  [1m[36mCompany Load (1.8ms)[0m  [1mSELECT "companies".* FROM "companies"[0m
+  [1m[35mLevel Load (0.2ms)[0m  SELECT "levels".* FROM "levels"
+  [1m[36mCategory Load (0.2ms)[0m  [1mSELECT "categories".* FROM "categories"[0m
+  Rendered search/index.html.erb within layouts/application (464.3ms)
+Completed 200 OK in 569ms (Views: 550.3ms | ActiveRecord: 3.4ms)
+
+
+Started GET "/search?utf8=%E2%9C%93&level%5B%5D=Internship&commit=Apply+Filters" for ::1 at 2016-09-30 00:57:42 -0500
+Processing by SearchController#index as HTML
+  Parameters: {"utf8"=>"✓", "level"=>["Internship"], "commit"=>"Apply Filters"}
+  [1m[35mLocation Load (1.9ms)[0m  SELECT "locations".* FROM "locations"
+  [1m[36mCompany Load (2.2ms)[0m  [1mSELECT "companies".* FROM "companies"[0m
+  [1m[35mLevel Load (0.5ms)[0m  SELECT "levels".* FROM "levels"
+  [1m[36mCategory Load (0.2ms)[0m  [1mSELECT "categories".* FROM "categories"[0m
+  Rendered search/index.html.erb within layouts/application (750.1ms)
+Completed 200 OK in 853ms (Views: 830.6ms | ActiveRecord: 4.8ms)
+
+
+Started GET "/search?utf8=%E2%9C%93&level%5B%5D=Internship&commit=Apply+Filters" for ::1 at 2016-09-30 00:57:51 -0500
+Processing by SearchController#index as HTML
+  Parameters: {"utf8"=>"✓", "level"=>["Internship"], "commit"=>"Apply Filters"}
+  [1m[35mLocation Load (1.6ms)[0m  SELECT "locations".* FROM "locations"
+  [1m[36mCompany Load (1.4ms)[0m  [1mSELECT "companies".* FROM "companies"[0m
+  [1m[35mLevel Load (0.2ms)[0m  SELECT "levels".* FROM "levels"
+  [1m[36mCategory Load (0.2ms)[0m  [1mSELECT "categories".* FROM "categories"[0m
+  Rendered search/index.html.erb within layouts/application (489.0ms)
+Completed 200 OK in 586ms (Views: 564.5ms | ActiveRecord: 3.5ms)
+
+
+Started GET "/search?utf8=%E2%9C%93&location%5B%5D=Allentown%2C+PA&level%5B%5D=Internship&commit=Apply+Filters" for ::1 at 2016-09-30 00:58:12 -0500
+Processing by SearchController#index as HTML
+  Parameters: {"utf8"=>"✓", "location"=>["Allentown, PA"], "level"=>["Internship"], "commit"=>"Apply Filters"}
+  [1m[35mLocation Load (1.4ms)[0m  SELECT "locations".* FROM "locations"
+  [1m[36mCompany Load (2.2ms)[0m  [1mSELECT "companies".* FROM "companies"[0m
+  [1m[35mLevel Load (0.3ms)[0m  SELECT "levels".* FROM "levels"
+  [1m[36mCategory Load (0.3ms)[0m  [1mSELECT "categories".* FROM "categories"[0m
+  Rendered search/index.html.erb within layouts/application (554.9ms)
+Completed 200 OK in 659ms (Views: 625.9ms | ActiveRecord: 4.2ms)
